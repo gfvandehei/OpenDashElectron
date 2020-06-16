@@ -1,0 +1,9 @@
+.apptile {
+  width: 8vw;
+  height: 8vw;
+  background: rgb(31,33,44);
+  background: radial-gradient(circle, rgba(31,33,44,1) 0%, rgba(44,41,45,1) 50%, rgba(27,23,38,0.4477958236658933) 100%);
+  margin-left: 1vw;
+  margin-top: 1vw;
+  border-radius: 1.5vw
+}
