@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { WebsocketapiService } from '../../../services/websocketapi.service';
+import { SensorData } from '../../../models/SensorData';
 
 @Component({
   selector: 'app-rearcamera',
@@ -8,10 +10,25 @@ import { Component, OnInit } from '@angular/core';
 export class RearcameraComponent implements OnInit {
   public img: Blob;
 
-  constructor() { }
+  constructor(private socket: WebsocketapiService) { }
 
   ngOnInit(): void {
-    this.img = new Blob();
+    this.socket.getSensorData().subscribe((data) => this.handleSensorData(data));
+    this.socket.linkSensorObservable(2);
+  }
+
+  handleSensorData(dataMessage: SensorData) {
+    //rear camera should be sensor 2
+    if (dataMessage.id == 2) {
+      this.handleRearCamera(dataMessage.data);
+      return;
+    } else {
+      return;
+    }
+  }
+
+  handleRearCamera(cameraData: any) {
+    console.log(cameraData);
   }
 
 }

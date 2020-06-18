@@ -8,6 +8,12 @@ import { HomeComponent } from './components/views/home/home.component';
 import { ViewcontainerComponent } from './components/viewcontainer/viewcontainer.component';
 import { ApptileComponent } from './components/apptile/apptile.component';
 import { RearcameraComponent } from './components/views/rearcamera/rearcamera.component';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+
+const config: SocketIoConfig = {
+  url: 'localhost:3000',
+  options: {}
+}
 
 @NgModule({
   declarations: [
@@ -20,7 +26,8 @@ import { RearcameraComponent } from './components/views/rearcamera/rearcamera.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SocketIoModule.forRoot(config)
   ],
   providers: [],
   bootstrap: [AppComponent]
