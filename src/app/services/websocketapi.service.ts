@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class WebsocketapiService {
-   
+
   constructor(private socket: Socket) {}
 
   sendMessage(message: string) {
