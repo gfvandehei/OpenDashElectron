@@ -1,0 +1,10 @@
+<div class="sensorcard">
+  <div class="title">
+    {{title}}
+  </div>
+  <div class="valuescontainer">
+    <div *ngFor="let value, name of sensorvalues">
+      <p>{{sensor}}: {{value}}</p>
+    </div>
+  </div>
+</div>

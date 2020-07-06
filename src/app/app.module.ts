@@ -9,6 +9,8 @@ import { ViewcontainerComponent } from './components/viewcontainer/viewcontainer
 import { ApptileComponent } from './components/apptile/apptile.component';
 import { RearcameraComponent } from './components/views/rearcamera/rearcamera.component';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { ClimateComponent } from './components/views/climate/climate.component';
+import { SensorcardComponent } from './components/sensorcard/sensorcard.component';
 
 const config: SocketIoConfig = {
   url: 'localhost:3000',
@@ -22,7 +24,9 @@ const config: SocketIoConfig = {
     HomeComponent,
     ViewcontainerComponent,
     ApptileComponent,
-    RearcameraComponent
+    RearcameraComponent,
+    ClimateComponent,
+    SensorcardComponent
   ],
   imports: [
     BrowserModule,
